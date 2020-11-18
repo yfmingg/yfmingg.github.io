@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>04-分布式一致性 | 未来架构</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="Just playing arch">
+    <link rel="preload" href="/assets/css/0.styles.0616c0bc.css" as="style"><link rel="preload" href="/assets/js/app.e17a3d6f.js" as="script"><link rel="preload" href="/assets/js/2.741f67df.js" as="script"><link rel="preload" href="/assets/js/12.b4d30050.js" as="script"><link rel="prefetch" href="/assets/js/10.937dde41.js"><link rel="prefetch" href="/assets/js/11.c21f59c9.js"><link rel="prefetch" href="/assets/js/13.b26f9e27.js"><link rel="prefetch" href="/assets/js/14.19da5d99.js"><link rel="prefetch" href="/assets/js/15.1c28dda3.js"><link rel="prefetch" href="/assets/js/16.d779ed56.js"><link rel="prefetch" href="/assets/js/17.3d586f1d.js"><link rel="prefetch" href="/assets/js/18.3c80eafb.js"><link rel="prefetch" href="/assets/js/19.a3091c47.js"><link rel="prefetch" href="/assets/js/20.7fd98e0a.js"><link rel="prefetch" href="/assets/js/3.4a130756.js"><link rel="prefetch" href="/assets/js/4.3234fac3.js"><link rel="prefetch" href="/assets/js/5.f5a5b26b.js"><link rel="prefetch" href="/assets/js/6.6b57813b.js"><link rel="prefetch" href="/assets/js/7.38714191.js"><link rel="prefetch" href="/assets/js/8.034e9f7b.js"><link rel="prefetch" href="/assets/js/9.f201dc3b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0616c0bc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">未来架构</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs.html" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分布式基础" class="dropdown-title"><span class="title">分布式基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/01-FLP不可能性原理.html" class="nav-link">
+  FLP不可能性原理
+</a></li><li class="dropdown-item"><!----> <a href="/basic/02-CAP理论.html" class="nav-link">
+  CAP原理
+</a></li><li class="dropdown-item"><!----> <a href="/basic/03-Base理论.html" class="nav-link">
+  Base理论
+</a></li><li class="dropdown-item"><!----> <a href="/basic/04-分布式一致性.html" class="nav-link">
+  分布式一致性
+</a></li><li class="dropdown-item"><!----> <a href="/basic/05-2PC-and-3PC.html" class="nav-link">
+  2PC-and-3PC
+</a></li><li class="dropdown-item"><!----> <a href="/basic/06-Paxos算法.html" class="nav-link">
+  Paxos算法
+</a></li><li class="dropdown-item"><!----> <a href="/basic/07-Raft算法.html" class="nav-link">
+  Raft算法
+</a></li><li class="dropdown-item"><!----> <a href="/basic/08-Zab协议.html" class="nav-link">
+  Zab协议
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术架构" class="dropdown-title"><span class="title">技术架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/db-design/" class="nav-link">
+  分库分表设计
+</a></li><li class="dropdown-item"><!----> <a href="/tech/db-data/" class="nav-link">
+  冷热数据分离
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cache/" class="nav-link">
+  缓存设计原则
+</a></li><li class="dropdown-item"><!----> <a href="/tech/tran/" class="nav-link">
+  分布式事务
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="场景架构" class="dropdown-title"><span class="title">场景架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  电商(秒杀、库存、sku)
+</a></li><li class="dropdown-item"><!----> <a href="/scene/pay/" class="nav-link">
+  支付(聚合、三方、银联)
+</a></li><li class="dropdown-item"><!----> <a href="/scene/risk/" class="nav-link">
+  风控(支付、信贷)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术选型" class="dropdown-title"><span class="title">技术选型</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/scene/pay/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/scene/risk/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/tech/db-design/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/tech/db-data/" class="nav-link">
+  运维
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cache/" class="nav-link">
+  测试
+</a></li><li class="dropdown-item"><!----> <a href="/tech/tran/" class="nav-link">
+  产品
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Devops" class="dropdown-title"><span class="title">Devops</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  持续交付方案
+</a></li><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  自动化测试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发资源" class="dropdown-title"><span class="title">开发资源</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.bejson.com/jsoneditoronline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JSON编辑器
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="http://cron.qqe2.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CRON表达式
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://trends.google.com/trends" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  谷歌趋势
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/yfmin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs.html" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分布式基础" class="dropdown-title"><span class="title">分布式基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic/01-FLP不可能性原理.html" class="nav-link">
+  FLP不可能性原理
+</a></li><li class="dropdown-item"><!----> <a href="/basic/02-CAP理论.html" class="nav-link">
+  CAP原理
+</a></li><li class="dropdown-item"><!----> <a href="/basic/03-Base理论.html" class="nav-link">
+  Base理论
+</a></li><li class="dropdown-item"><!----> <a href="/basic/04-分布式一致性.html" class="nav-link">
+  分布式一致性
+</a></li><li class="dropdown-item"><!----> <a href="/basic/05-2PC-and-3PC.html" class="nav-link">
+  2PC-and-3PC
+</a></li><li class="dropdown-item"><!----> <a href="/basic/06-Paxos算法.html" class="nav-link">
+  Paxos算法
+</a></li><li class="dropdown-item"><!----> <a href="/basic/07-Raft算法.html" class="nav-link">
+  Raft算法
+</a></li><li class="dropdown-item"><!----> <a href="/basic/08-Zab协议.html" class="nav-link">
+  Zab协议
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术架构" class="dropdown-title"><span class="title">技术架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/db-design/" class="nav-link">
+  分库分表设计
+</a></li><li class="dropdown-item"><!----> <a href="/tech/db-data/" class="nav-link">
+  冷热数据分离
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cache/" class="nav-link">
+  缓存设计原则
+</a></li><li class="dropdown-item"><!----> <a href="/tech/tran/" class="nav-link">
+  分布式事务
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="场景架构" class="dropdown-title"><span class="title">场景架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  电商(秒杀、库存、sku)
+</a></li><li class="dropdown-item"><!----> <a href="/scene/pay/" class="nav-link">
+  支付(聚合、三方、银联)
+</a></li><li class="dropdown-item"><!----> <a href="/scene/risk/" class="nav-link">
+  风控(支付、信贷)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术选型" class="dropdown-title"><span class="title">技术选型</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/scene/pay/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/scene/risk/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/tech/db-design/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/tech/db-data/" class="nav-link">
+  运维
+</a></li><li class="dropdown-item"><!----> <a href="/tech/cache/" class="nav-link">
+  测试
+</a></li><li class="dropdown-item"><!----> <a href="/tech/tran/" class="nav-link">
+  产品
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Devops" class="dropdown-title"><span class="title">Devops</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  持续交付方案
+</a></li><li class="dropdown-item"><!----> <a href="/scene/shop/" class="nav-link">
+  自动化测试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发资源" class="dropdown-title"><span class="title">开发资源</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.bejson.com/jsoneditoronline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JSON编辑器
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="http://cron.qqe2.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CRON表达式
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://trends.google.com/trends" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  谷歌趋势
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/yfmin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>04-分布式一致性</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic/04-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7.html#一致性的重要性" class="sidebar-link">一致性的重要性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/basic/04-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7.html#数据一致性" class="sidebar-link">数据一致性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/basic/04-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7.html#为什么会有数据一致性问题？" class="sidebar-link">为什么会有数据一致性问题？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/basic/04-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7.html#数据一致性场景" class="sidebar-link">数据一致性场景</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/basic/04-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7.html#一致性模型" class="sidebar-link">一致性模型</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/basic/04-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7.html#总结" class="sidebar-link">总结</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="一致性的重要性"><a href="#一致性的重要性" class="header-anchor">#</a> 一致性的重要性</h2> <p>分布式领域CAP理论告诉我们，任何一个分布式系统都无法同时满足Consistency(一致性)、Availability(可用性)、Partition tolerance(分区容错性) 这三个基本需求。最多只能满足其中两项。</p> <p>但是，一个分布式系统无论在CAP三者之间如何权衡，都无法彻底放弃一致性（Consistency），如果真的放弃一致性，那么就说明这个系统中的数据根本不可信，数据也就没有意义，那么这个系统也就没有任何价值可言。所以，无论如何，分布式系统的一致性问题都需要重点关注。</p> <p>这里先简单提一下，由于一个分布式系统不可能放弃一致性，那么为什么有的架构师还说在某些场景中可以牺牲一致性呢？通常这里说的放弃一致性指的是放弃数据的强一致性（后文介绍什么是强一致性）。</p> <p>通常情况下，我们所说的分布式一致性问题通常指的是数据一致性问题。那么我们就先来了解一下什么是数据一致性。</p> <h2 id="数据一致性"><a href="#数据一致性" class="header-anchor">#</a> 数据一致性</h2> <p>数据一致性其实是数据库系统中的概念。我们可以简单的把一致性理解为正确性或者完整性，那么数据一致性通常指关联数据之间的逻辑关系是否正确和完整。我们知道，在数据库系统中通常用事务（访问并可能更新数据库中各种数据项的一个程序执行单元）来保证数据的一致性和完整性。</p> <p>而在分布式系统中，数据一致性往往指的是由于数据的复制，不同数据节点中的数据内容是否完整并且相同。</p> <h2 id="为什么会有数据一致性问题？"><a href="#为什么会有数据一致性问题？" class="header-anchor">#</a> 为什么会有数据一致性问题？</h2> <p>虽然分布式系统有着诸多优点，但是由于采用多机器进行分布式部署的方式提供服务，必然存在着数据的复制。分布式系统的数据复制需求主要来源于以下两个原因：</p> <ol><li>可用性。将数据复制到分布式部署的多台机器中，可以消除单点故障，防止系统由于某台（些）机器宕机导致的不可用。</li> <li>性能。通过负载均衡技术，能够让分布在不同地方的数据副本全都对外提供服务。有效提高系统性能。</li></ol> <p>在分布式系统引入复制机制后，不同的数据节点之间由于网络延时等原因很容易产生数据不一致的情况。复制机制的目的是为了保证数据的一致性。但是数据复制面临的主要难题也是如何保证多个副本之间的数据一致性。</p> <hr> <h2 id="数据一致性场景"><a href="#数据一致性场景" class="header-anchor">#</a> 数据一致性场景</h2> <p>假设有这样的场景，有两个人同时去两个不同的火车站买票（A去A火车站，B去B火车站），为了保证合理的卖票，需要在A火车站和B火车站之间共享关于剩余票数的数据。但是A和B要买的票只剩下一张。一张票当然只能卖给一个人。 如果为了保证系统性能，那么A和B在买票的时候应该都可以买票成功（因为他们在买票过程中余票数据都显示还有一张余票）。两人在买完票之后，系统在做数据复制时发现一张票被卖出了两次，这时就要让A和B两人其中一人手中得票作废掉。这时就要花费很大的力气来通知后买到这张票的人这个消息。。。 如果为了保证数据一致性，那么就需要在A买票的过程中，B只能等着。等A买票结束，并且把余票结果同步到B火车站的售票窗口。然后B才能知道还有没有余票可以购买。</p> <p>上面的例子可以简单的说明一个系统如果想保证数据一致性很有可能影响其性能。因为并发的写请求需要在前一个写请求结束之后才能进行。</p> <p>因此，如何能既保证数据一致性，又保证系统的性能，是每一个分布式系统都需要重点考虑和权衡的。一致性模型可以在做这些权衡的时候给我们很多借鉴和思考。</p> <hr> <h2 id="一致性模型"><a href="#一致性模型" class="header-anchor">#</a> 一致性模型</h2> <h4 id="强一致性"><a href="#强一致性" class="header-anchor">#</a> 强一致性</h4> <p>当更新操作完成之后，任何多个后续进程或者线程的访问都会返回最新的更新过的值。这种是对用户最友好的，就是用户上一次写什么，下一次就保证能读到什么。但是这种实现对性能影响较大。</p> <h4 id="弱一致性"><a href="#弱一致性" class="header-anchor">#</a> 弱一致性</h4> <p>系统并不保证续进程或者线程的访问都会返回最新的更新过的值。系统在数据写入成功之后，不承诺立即可以读到最新写入的值，也不会具体的承诺多久之后可以读到。但会尽可能保证在某个时间级别（比如秒级别）之后，可以让数据达到一致性状态。</p> <h4 id="最终一致性"><a href="#最终一致性" class="header-anchor">#</a> 最终一致性</h4> <p>弱一致性的特定形式。系统保证在没有后续更新的前提下，系统最终返回上一次更新操作的值。在没有故障发生的前提下，不一致窗口的时间主要受通信延迟，系统负载和复制副本的个数影响。DNS是一个典型的最终一致性系统。</p> <h4 id="最终一致性模型的变种"><a href="#最终一致性模型的变种" class="header-anchor">#</a> 最终一致性模型的变种</h4> <ul><li>因果一致性：如果A进程在更新之后向B进程通知更新的完成，那么B的访问操作将会返回更新的值。如果没有因果关系的C进程将会遵循最终一致性的规则。</li> <li>读己所写一致性：因果一致性的特定形式。一个进程总可以读到自己更新的数据。</li> <li>会话一致性：读己所写一致性的特定形式。进程在访问存储系统同一个会话内，系统保证该进程读己之所写。</li> <li>单调读一致性：如果一个进程已经读取到一个特定值，那么该进程不会读取到该值以前的任何值。</li> <li>单调写一致性：系统保证对同一个进程的写操作串行化。</li></ul> <p>上述最终一致性的不同方式可以进行组合，例如单调读一致性和读己所写一致性就可以组合实现。并且从实践的角度来看，这两者的组合，读取自己更新的 数据，和一旦读取到最新的版本不会再读取旧版本，对于此架构上的程序开发来说，会少很多额外的烦恼。</p> <hr> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>为了解决分布式的一致性问题，在长期的研究探索过程中，涌现出了一大批经典的分布式一致性协议和算法，其中比较著名的有二阶段提交协议（2PC），三阶段提交协议（3PC）和Paxos算法。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e17a3d6f.js" defer></script><script src="/assets/js/2.741f67df.js" defer></script><script src="/assets/js/12.b4d30050.js" defer></script>
+  </body>
+</html>
