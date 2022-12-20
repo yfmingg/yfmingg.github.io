@@ -1,19 +1,14 @@
 + [Home](README.md)
 + AI
-	+ TensorFlow
-	+ PyTorch
+  + [TensorFlow入门](docs/BlockChain/TensorFlow入门.md)
+  + [PyTorch入门](docs/BlockChain/PyTorch入门.md)
 + BlockChain
-	+ Coin
-	+ Defi
-	+ Dapp
+  + [Dapp开发入门](docs/BlockChain/Dapp开发入门.md)
+  + [以太坊智能合约简介](docs/BlockChain/以太坊智能合约简介.md)
+  + [以太坊事件与日志](docs/BlockChain/以太坊事件与日志.md)
 + Investment
-	+ [保险及其他](docs/wiki-insurance.md)
+  + [保险及其他](docs/Investment/保险.md)
 + Life
-	+ 法考
-	+ CPA
-	+ CFA
-	+ [签证](docs/wiki-visa.md)
-	+ [雅思](docs/wiki-IELTS.md)
-	+ [考研](docs/wiki-master.md)
-		+ [英语](docs/wiki-master-english.md)
-		+ [数学](docs/wiki-master-math.md)
+  + [签证](docs/Life/签证.md)
+  + [雅思](docs/Life/雅思.md)
+  + [考研](docs/Life/考研.md)
