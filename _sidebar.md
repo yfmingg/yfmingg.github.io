@@ -1,14 +1,20 @@
 + [Home](README.md)
 + AI
-  + [TensorFlow入门](docs/BlockChain/TensorFlow入门.md)
-  + [PyTorch入门](docs/BlockChain/PyTorch入门.md)
+  + [TensorFlow入门](docs/AI/TensorFlow入门.md)
+  + [PyTorch入门](docs/AI/PyTorch入门.md)
 + BlockChain
+  + [Awesome区块链](docs/BlockChain/Awesome区块链.md)
+  + [Awesome比特币](docs/BlockChain/Awesome比特币.md)
+  + [Awesome以太坊](docs/BlockChain/Awesome以太坊.md)
   + [Dapp开发入门](docs/BlockChain/Dapp开发入门.md)
-  + [以太坊智能合约简介](docs/BlockChain/以太坊智能合约简介.md)
+  + [Solidity数据存储位置](docs/BlockChain/Solidity数据存储位置.md)
+  + [以太坊EVM简介](docs/BlockChain/以太坊EVM简介.md)
   + [以太坊事件与日志](docs/BlockChain/以太坊事件与日志.md)
+  + [以太坊智能合约简介](docs/BlockChain/以太坊智能合约简介.md)
 + Investment
-  + [保险及其他](docs/Investment/保险.md)
+  + [米什金-货币金融学-笔记](docs/Investment/米什金-货币金融学-笔记.md)
+  + [罗斯-公司理财-笔记](docs/Investment/罗斯-公司理财-笔记.md)
+  + [博迪-投资学-笔记](docs/Investment/博迪-投资学-笔记.md)
+  + [Awesome保险](docs/Investment/Awesome保险.md)
 + Life
-  + [签证](docs/Life/签证.md)
-  + [雅思](docs/Life/雅思.md)
-  + [考研](docs/Life/考研.md)
+  + [Awesome出国](docs/Life/Awesome出国.md)
