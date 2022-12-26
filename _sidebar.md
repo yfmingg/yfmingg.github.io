@@ -1,9 +1,13 @@
 + [Home](README.md)
 + AI
+  + [AwesomeAI](docs/AI/AwesomeAI.md)
+  + [人工智能概述](docs/AI/人工智能概述.md)
+  + [机器学习概述](docs/AI/机器学习概述.md)
+  + [深度学习概述](docs/AI/深度学习概述.md)
   + [TensorFlow入门](docs/AI/TensorFlow入门.md)
   + [PyTorch入门](docs/AI/PyTorch入门.md)
 + BlockChain
-  + [Awesome区块链](docs/BlockChain/Awesome区块链.md)
+  + [AwesomeBlockChain](docs/BlockChain/AwesomeBlockChain.md)
   + [Dapp开发入门](docs/BlockChain/Dapp开发入门.md)
   + [Solidity数据存储位置](docs/BlockChain/Solidity数据存储位置.md)
   + [以太坊EVM简介](docs/BlockChain/以太坊EVM简介.md)
