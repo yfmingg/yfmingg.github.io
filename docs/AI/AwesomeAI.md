@@ -1,5 +1,13 @@
 # AwesomeAI
 
+## 数据集网站
+
+- kaggle: <https://www.kaggle.com/>
+- <https://paperswithcode.com/>
+- <https://roboflow.com/>
+- <https://data.mendeley.com/>
+- <https://ieee-dataport.org/>
+
 ## 应用项目
 
 - 涂鸦识别：<https://quickdraw.withgoogle.com>

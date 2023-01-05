@@ -25,6 +25,34 @@
 - 区块浏览器: <https://etherscan.io/>
 - 信标链浏览器：<https://beaconcha.in/>
 
+Token相关：
+
+- openzeppelin-erc20: <https://docs.openzeppelin.com/contracts/4.x/api/token/erc20>
+
+web3.js相关：
+
+- 官网：<https://web3js.org/>
+- 官方文档：<https://web3js.readthedocs.io/en/v1.8.1/>
+- 中文文档：<https://learnblockchain.cn/docs/web3.js/>
+- Github: <https://github.com/web3/web3.js>
+
+ethers相关：
+
+- 官网：<https://ethers.org/>
+- 中文文档：<https://learnblockchain.cn/docs/ethers.js/>
+
+智能合约相关：
+
+- Remix IDE：一款基于浏览器的智能合约开发IDE,地址 <https://remix.ethereum.org/>
+- Solidity中文文档地址: <https://learnblockchain.cn/docs/solidity/>
+- 崔棉大师solidity-example： <https://web3dao-cn.github.io/solidity-example/>
+- openzeppelin: <https://www.openzeppelin.com/contracts>
+
+节点服务：
+
+- infura：<https://www.infura.io/zh>
+- alchemy：<https://www.alchemy.com/>
+
 ## 课程
 
 ## Defi

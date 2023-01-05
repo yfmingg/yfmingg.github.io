@@ -1,30 +1,5 @@
 # Dapp开发入门
 
-## 相关资源
-
-web3.js相关：
-
-- 官网：<https://web3js.org/>
-- 官方文档：<https://web3js.readthedocs.io/en/v1.8.1/>
-- 中文文档：<https://learnblockchain.cn/docs/web3.js/>
-- Github: <https://github.com/web3/web3.js>
-
-ethers相关：
-
-- 官网：<https://ethers.org/>
-- 中文文档：<https://learnblockchain.cn/docs/ethers.js/>
-
-智能合约相关：
-
-- Remix IDE：一款基于浏览器的智能合约开发IDE,地址 <https://remix.ethereum.org/>
-- Solidity中文文档地址: <https://learnblockchain.cn/docs/solidity/>
-- 崔棉大师solidity-example： <https://web3dao-cn.github.io/solidity-example/>
-- openzeppelin: <https://www.openzeppelin.com/contracts>
-
-节点服务：
-
-- infura：<https://www.infura.io/zh>
-
 ## Dapp介绍
 
 Dapp前端的表现上是一样的， 还是H5页面、 小程序、APP，DAPP和传统App关键是后端部分不同，是后端不再是一个中心化的服务器，而是分布式网络上任意节点，注意可以是任意一个节点。
@@ -264,15 +239,22 @@ $("#button").click(function() {
 
 ## 开发入门(ethers.js+solidity)
 
-## 工程化开发(Truffle)
+与web3.js相比，ethers.js有很多优点，一个特性是Ethers.js提供的状态和密钥管理。web3的设计场景是DApp应该连接到一个本地节点，由这个节点负责保存密钥、签名交易并与以太坊区块链交互。现实并不是这样的，绝大多数用户不会在本地运行一个geth节点。Metamask在浏览器应用中有效地模拟了这种节点环境，因此绝大多数web3应用需要使用Metamask来保存密钥、签名交易并完成与以太坊的交互。
 
-官网：<https://trufflesuite.com/>
-中文文档：<https://learnblockchain.cn/docs/truffle/>
+Ethers.js采取了不同的设计思路，它提供给开发者更多的灵活性。Ethers.js将“节点”拆分为两个不同的角色：
+
+- 钱包：负责密钥保存和交易签名
+- 提供器：负责以太坊网络的匿名连接、状态检查和交易发送
 
 ## 工程化开发(Hardhat)
 
 官网：<https://hardhat.org/>
 中文文档：<https://learnblockchain.cn/docs/hardhat/getting-started/>
+
+## 工程化开发(Truffle)
+
+官网：<https://trufflesuite.com/>
+中文文档：<https://learnblockchain.cn/docs/truffle/>
 
 ## TheGraph入门
 
