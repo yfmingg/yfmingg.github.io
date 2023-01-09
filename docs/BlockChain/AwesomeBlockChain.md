@@ -25,9 +25,16 @@
 - 区块浏览器: <https://etherscan.io/>
 - 信标链浏览器：<https://beaconcha.in/>
 
-Token相关：
+EVM相关：
 
-- openzeppelin-erc20: <https://docs.openzeppelin.com/contracts/4.x/api/token/erc20>
+- evm opcodes reference: <https://www.evm.codes/>
+
+智能合约相关：
+
+- Remix IDE：一款基于浏览器的智能合约开发IDE,地址 <https://remix.ethereum.org/>
+- Solidity中文文档地址: <https://learnblockchain.cn/docs/solidity/>
+- 崔棉大师solidity-example： <https://web3dao-cn.github.io/solidity-example/>
+- openzeppelin-contract: <https://www.openzeppelin.com/contracts>
 
 web3.js相关：
 
@@ -41,17 +48,15 @@ ethers相关：
 - 官网：<https://ethers.org/>
 - 中文文档：<https://learnblockchain.cn/docs/ethers.js/>
 
-智能合约相关：
+开发框架:
 
-- Remix IDE：一款基于浏览器的智能合约开发IDE,地址 <https://remix.ethereum.org/>
-- Solidity中文文档地址: <https://learnblockchain.cn/docs/solidity/>
-- 崔棉大师solidity-example： <https://web3dao-cn.github.io/solidity-example/>
-- openzeppelin: <https://www.openzeppelin.com/contracts>
+- hardhat: 
 
 节点服务：
 
 - infura：<https://www.infura.io/zh>
 - alchemy：<https://www.alchemy.com/>
+- 本地开发测试链：<https://trufflesuite.com/ganache/>
 
 ## 课程
 
