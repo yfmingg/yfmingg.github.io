@@ -11,15 +11,17 @@
   + [一位大数据开发工程师的两年工作经验总结(20180702)](docs/BigData/一位大数据开发工程师的两年工作经验总结.md)
 + BlockChain
   + [AwesomeBlockChain](docs/BlockChain/AwesomeBlockChain.md)
-  + [钱包相关](docs/BlockChain/钱包相关.md)
-  + [Dapp开发入门](docs/BlockChain/Dapp开发入门.md)
-  + [Solidity数据存储位置](docs/BlockChain/Solidity数据存储位置.md)
-  + [以太坊EVM简介](docs/BlockChain/以太坊EVM简介.md)
-  + [以太坊事件与日志](docs/BlockChain/以太坊事件与日志.md)
-  + [以太坊智能合约简介](docs/BlockChain/以太坊智能合约简介.md)
+  + Ethereum
+    + [钱包相关](docs/BlockChain/Ethereum/钱包相关.md)
+    + [Dapp开发入门](docs/BlockChain/Ethereum/Dapp开发入门.md)
+    + [Solidity数据存储位置](docs/BlockChain/Ethereum/Solidity数据存储位置.md)
+    + [以太坊EVM简介](docs/BlockChain/Ethereum/以太坊EVM简介.md)
+    + [以太坊事件与日志](docs/BlockChain/Ethereum/以太坊事件与日志.md)
+    + [以太坊智能合约简介](docs/BlockChain/Ethereum/以太坊智能合约简介.md)
   + Defi
     + [Uniswap概览](docs/BlockChain/Defi/Uniswap概览.md)
-    + [Curve概览](docs/BlockChain/Defi/Curve概述.md)
+    + [Curve概览](docs/BlockChain/Defi/Curve概览.md)
+    + [Defi-Mooc-Note](docs/BlockChain/Defi/Defi-Mooc-Note.md)
 + Awesome
   + [医药](docs/Awesome/医药.md)
   + [保险](docs/Awesome/保险.md)
@@ -27,7 +29,9 @@
   + [债券市场](docs/Awesome/债券市场.md)
   + [城投平台](docs/Awesome/城投平台.md)
 + Note
+  + [唐朝文章摘录](docs/Note/唐朝文章摘录.md)
   + [英语兔语法](docs/Note/英语兔语法.md)
+  + [英语兔音标](docs/Note/英语兔音标.md)
   + [考研英语](docs/Note/考研英语.md)
   + [考研数学](docs/Note/考研数学.md)
   + [408](docs/Note/408/README.md)
