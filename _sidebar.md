@@ -11,8 +11,9 @@
   + [一位大数据开发工程师的两年工作经验总结(20180702)](docs/BigData/一位大数据开发工程师的两年工作经验总结.md)
 + BlockChain
   + [AwesomeBlockChain](docs/BlockChain/AwesomeBlockChain.md)
+  + [钱包相关](docs/BlockChain/钱包相关.md)
+  + [密码学相关](docs/BlockChain/密码学相关.md)
   + Ethereum
-    + [钱包相关](docs/BlockChain/Ethereum/钱包相关.md)
     + [Dapp开发入门](docs/BlockChain/Ethereum/Dapp开发入门.md)
     + [Solidity数据存储位置](docs/BlockChain/Ethereum/Solidity数据存储位置.md)
     + [以太坊EVM简介](docs/BlockChain/Ethereum/以太坊EVM简介.md)
