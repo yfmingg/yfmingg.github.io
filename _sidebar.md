@@ -13,7 +13,10 @@
   + [AwesomeBlockChain](docs/BlockChain/AwesomeBlockChain.md)
   + [钱包相关](docs/BlockChain/钱包相关.md)
   + [密码学相关](docs/BlockChain/密码学相关.md)
+  + [公链生态概览](docs/BlockChain/公链生态概览.md)
+  + [知名项目概览](docs/BlockChain/知名项目概览.md)
   + Ethereum
+    + [开发资源](docs/BlockChain/Ethereum/开发资源.md)
     + [Dapp开发入门](docs/BlockChain/Ethereum/Dapp开发入门.md)
     + [Solidity数据存储位置](docs/BlockChain/Ethereum/Solidity数据存储位置.md)
     + [以太坊EVM简介](docs/BlockChain/Ethereum/以太坊EVM简介.md)
