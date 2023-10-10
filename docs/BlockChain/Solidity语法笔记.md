@@ -1,0 +1,9 @@
+# Solidity语法笔记
+
+## 数据类型
+
+当我们调用智能合约时，本质上是向目标合约发送了一段calldata，在remix中发送一次交易后，可以在详细信息中看见input即为此次交易的calldata,发送的calldata中前4个字节是selector（函数选择器）,后面是函数对应的参数。msg.data是solidity中的一个全局变量，值为完整的calldata（调用函数时传入的数据）。其实calldata就是告诉智能合约，我要调用哪个函数，以及参数是什么。
+
+## Keccak256和sha3
+
+sha3由keccak标准化而来，在很多场合下Keccak和SHA3是同义词，但在2015年8月SHA3最终完成标准化时，NIST调整了填充算法。所以SHA3就和keccak计算的结果不一样，这点在实际开发中要注意。以太坊在开发的时候sha3还在标准化中，所以采用了keccak，所以Ethereum和Solidity智能合约代码中的SHA3是指Keccak256，而不是标准的NIST-SHA3，为了避免混淆，直接在合约代码中写成Keccak256是最清晰的。
